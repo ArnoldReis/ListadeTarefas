@@ -1,13 +1,8 @@
 import React, { Component } from "react";
 import "./Main.css";
+import Form from "./Form"; // Importing the Form component
+import Tasks from "./Tasks"; // Importing the Tasks component
 
-// Form
-
-import { FaPlus } from "react-icons/fa";
-
-// Tasks
-
-import { FaEdit, FaTrash } from "react-icons/fa";
 
 export default class Main extends Component {
   state = {
@@ -84,36 +79,16 @@ export default class Main extends Component {
     return (
       <div className="main">
         <h1>Lista de tarefas</h1>
-
-        <form onSubmit={this.handleSubmit} action="#" className="form">
-          <input
-            onChange={this.handleChange}
-            type="text"
-            placeholder="Digite uma tarefa"
-            value={newtask}
-          />
-          <button type="submit">
-            <FaPlus />
-          </button>
-        </form>
-
-        <ul className="tasks">
-          {tasks.map((task, index) => (
-            <li key={task}>
-              {task}
-              <span className="actions">
-                <FaEdit
-                  onClick={(e) => this.handleEdit(e, index)}
-                  className="edit"
-                ></FaEdit>
-                <FaTrash
-                  onClick={(e) => this.handleDelete(e, index)}
-                  className="delete"
-                ></FaTrash>
-              </span>
-            </li>
-          ))}
-        </ul>
+        <Form
+        handleSubmit={this.handleSubmit}
+        handleChange={this.handleChange}
+        newtask={newtask}
+        />
+        <Tasks
+          tasks={tasks}
+          handleEdit={this.handleEdit}
+          handleDelete={this.handleDelete}
+        />
       </div>
     );
   }

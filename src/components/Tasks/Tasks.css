@@ -1,0 +1,37 @@
+.tasks {
+  margin-top: 30px;
+}
+
+.tasks li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  transition: all 600ms;
+}
+.tasks li:hover {
+  background-color: #f0f0f0;
+
+}
+
+.tasks li .edit, .tasks li .delete {
+  margin-right: 15px;
+  color: #61dafb;
+  cursor: pointer;
+  transition: all 600ms;
+}
+.tasks li .delete {
+  color: #ff6347;
+}
+
+.tasks li:hover .edit,
+.tasks li:hover .delete {
+  color: #000;
+}
+
+.tasks li{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
